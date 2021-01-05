@@ -1,10 +1,15 @@
-// koroFileHeader generate.
-// Author: 吴庆涛
-// Description: tcp代理
-// Date: 2021-01-05 20:07:54
-// FilePath: /tcpproxy/main.go
-// LastEditors: 吴庆涛
-// LastEditTime: 2021-01-05 20:42:19
+/*
+ * Copyright (c) 2021 wuqingtao
+ * tcpproxy is licensed under Mulan PSL v2.
+ * You can use this software according to the terms and conditions of the Mulan PSL v2.
+ * You may obtain a copy of Mulan PSL v2 at:
+ *          http://license.coscl.org.cn/MulanPSL2
+ * THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+ * See the Mulan PSL v2 for more details.
+ *
+ * Author: wuqingtao (wqt_1110@qq.com)
+ * CreateTime: 2021-01-05 21:41:39+0800
+ */
 
 package main
 
