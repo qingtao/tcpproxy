@@ -76,12 +76,18 @@ func (p *Proxy) handleConnect(clientConn net.Conn) {
 	defer func() {
 		clientConn.Close()
 		if p.Debug {
-			log.Printf("client %s <-> agent server %s",
+			log.Printf("client %s <-> agent server %s closed",
 				clientConn.RemoteAddr(),
 				clientConn.LocalAddr(),
 			)
 		}
 	}()
+	if c, ok := clientConn.(*tls.Conn); ok {
+		if err := c.Handshake(); err != nil {
+			log.Printf("tls.Conn.Handshake() error %s", err)
+			return
+		}
+	}
 	ctx, cancel := context.WithCancel(context.TODO())
 	defer cancel()
 	agentConn, err := p.Dialer.DialContext(ctx, "tcp", p.Backend)
@@ -93,7 +99,7 @@ func (p *Proxy) handleConnect(clientConn net.Conn) {
 	defer func() {
 		agentConn.Close()
 		if p.Debug {
-			log.Printf("agent client %s <-> server %s",
+			log.Printf("agent client %s <-> server %s closed",
 				agentConn.LocalAddr(),
 				agentConn.RemoteAddr(),
 			)
