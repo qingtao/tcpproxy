@@ -1,0 +1,5 @@
+cmd/testtlsclient/testtlsclient*
+cmd/generate_keys/*
+!cmd/generate_keys/main.go
+*.exe
+./tcpproxy
