@@ -3,3 +3,4 @@ cmd/generate_keys/*
 !cmd/generate_keys/main.go
 *.exe
 ./tcpproxy
+cmd/tcpproxy/tcpproxy
