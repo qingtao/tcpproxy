@@ -40,7 +40,7 @@ func mergeOptions(opts *Options, options ...Option) {
 }
 
 // WithTLSKeyPair 配置tls证书和秘钥的路径
-func WithTLSKeyPair(certFile, keyFile string) func(*Options) {
+func WithTLSKeyPair(certFile, keyFile string) Option {
 	return func(o *Options) {
 		o.cert = certFile
 		o.key = keyFile
@@ -48,21 +48,21 @@ func WithTLSKeyPair(certFile, keyFile string) func(*Options) {
 }
 
 // WithTimeout 配置超时参数
-func WithTimeout(d time.Duration) func(*Options) {
+func WithTimeout(d time.Duration) Option {
 	return func(o *Options) {
 		o.timeout = d
 	}
 }
 
 // WithKeepAlive 配置长连接的时间间隔
-func WithKeepAlive(d time.Duration) func(*Options) {
+func WithKeepAlive(d time.Duration) Option {
 	return func(o *Options) {
 		o.keepAlive = d
 	}
 }
 
 // WithDebug 配置调试选项
-func WithDebug(debug bool) func(*Options) {
+func WithDebug(debug bool) Option {
 	return func(o *Options) {
 		o.debug = debug
 	}

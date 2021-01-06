@@ -1,5 +1,7 @@
 # 一个简单的 tcp 代理
 
+> 已知问题: 当前不支持后端服务是 tls 连接
+
 ```sh
 Usage of tcpproxy:
   -addr string
