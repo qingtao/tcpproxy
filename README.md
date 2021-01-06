@@ -16,5 +16,5 @@ Usage of tcpproxy:
 ```
 
 ```sh
-./tcpproxy.exe -backend=127.0.0.1:8124 -cert=../generate_keys/cert.pem -key=../generate_keys/key.pem -debug
+./tcpproxy -backend=127.0.0.1:8124 -cert=../generate_keys/cert.pem -key=../generate_keys/key.pem -debug
 ```

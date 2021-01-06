@@ -26,10 +26,10 @@ import (
 var (
 	addr      = flag.String("addr", ":8123", "代理的监听地址")
 	backend   = flag.String("backend", "", "后端服务地址")
-	certFile  = flag.String("cert", "", "tls证书文件路径(pem)")
-	keyFile   = flag.String("key", "", "tls密钥文件路径(pem)")
-	timeout   = flag.Int64("timeout", 5, "连接超时时间")
-	keepalive = flag.Int64("keepalive", 20, "")
+	certFile  = flag.String("tls.cert", "", "tls证书文件路径(pem格式)")
+	keyFile   = flag.String("tls.key", "", "tls密钥文件路径(pem格式)")
+	timeout   = flag.Int64("tcp.timeout", 5, "连接超时时间(单位秒)")
+	keepalive = flag.Int64("tcp.keepalive", 15, "保持连接的时间间隔(单位秒)")
 	debug     = flag.Bool("debug", false, "是否打印debug信息")
 )
 
